@@ -1,11 +1,13 @@
 const Header = () => {
   return (
-    <header>
-      <nav className="navbar">
+    <header className="container">
+      <nav className="navbar ">
         <h1>Codv Blog</h1>
         <div className="links">
           <a href="/"> Home </a>
-          <a href="/create"> New Post </a>
+          <a href="/create" className="btn">
+            New Post
+          </a>
         </div>
       </nav>
     </header>
