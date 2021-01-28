@@ -1,11 +1,14 @@
+import { useState } from "react";
 import Posts from "./posts/Posts";
 
 const Home = () => {
-  let name = "Ali";
+  // let name = "Ali";
+  let [name, setName] = useState("Ali");
   const handleClick = () => {
-    name = "Hossam";
-    console.log(name);
+    // name = "Hossam";
+    setName("Hossam");
   };
+  console.log(name);
   return (
     <div className="home">
       {/* <button className="btn" onClick={(e) => handleClick("Hossam", e)}>
