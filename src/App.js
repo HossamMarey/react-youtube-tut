@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -6,15 +8,19 @@ import CreatePost from "./components/posts/CreatePost";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main className="container">
-        <Home />
-        {/* <PostDetails /> */}
-        {/* <CreatePost /> */}
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <main className="container">
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/post" component={PostDetails} />
+            <Route path="/create" component={CreatePost} />
+          </Switch>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
