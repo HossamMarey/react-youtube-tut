@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Post from "./Post";
 
@@ -23,6 +23,10 @@ const Posts = () => {
     },
     { id: 3, title: "post title 3", body: "post body ...", image: img3 },
   ]);
+
+  useEffect(() => {
+    console.log("Empty useEffect");
+  });
 
   const handleDelete = (id) => {
     let curPosts = [...posts];
