@@ -1,5 +1,5 @@
 import { useState } from "react";
-const CreeatePost = () => {
+const CreeatePost = (props) => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [body, setBody] = useState("");
@@ -7,14 +7,23 @@ const CreeatePost = () => {
 
   const handleForm = (e) => {
     e.preventDefault();
-    console.log(title);
-    console.log(url);
-    console.log(body);
-    console.log(author);
+    const post = {
+      title,
+      body,
+      image: url,
+      author,
+    };
+    fetch("http://localhost:4000/posts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(post),
+    }).then(() => {
+      // console.log("post added");
+      props.history.push("/");
+    });
   };
   return (
     <section className="create-post">
-      <p>{title}</p>
       <h2>Add New Post</h2>
       <form onSubmit={handleForm}>
         <label>Blog title :</label>
