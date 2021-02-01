@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="container">
       <nav className="navbar ">
         <h1>Codv Blog</h1>
         <div className="links">
-          <a href="/"> Home </a>
-          <a href="/create" className="btn">
+          <Link to="/"> Home </Link>
+          <Link to="/create" className="btn">
             New Post
-          </a>
+          </Link>
         </div>
       </nav>
     </header>

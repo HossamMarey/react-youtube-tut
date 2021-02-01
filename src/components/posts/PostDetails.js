@@ -1,4 +1,5 @@
-const PostDetails = () => {
+const PostDetails = (props) => {
+  console.log(props.match.params.id);
   return (
     <article className="container post-details">
       <div className="post-details-title">
