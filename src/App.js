@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -15,7 +10,7 @@ import About from "./components/About";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <Header />
         <main className="container">
@@ -34,7 +29,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
