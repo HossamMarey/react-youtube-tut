@@ -5,10 +5,17 @@ const Header = () => {
       <nav className="navbar ">
         <h1>Codv Blog</h1>
         <div className="links">
-          <NavLink activeClassName="active" exact to="/">
+          <NavLink
+            className={(ndata) => ndata.isActive && "active"}
+            exact
+            to="/"
+          >
             Home
           </NavLink>
-          <NavLink activeClassName="active" to="/about">
+          <NavLink
+            className={(ndata) => ndata.isActive && "active"}
+            to="/about"
+          >
             About
           </NavLink>
           <Link to="/create" className="btn">

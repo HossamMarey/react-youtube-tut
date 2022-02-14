@@ -1,23 +1,25 @@
 import useFetch from "../../useFetch";
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 const PostDetails = (props) => {
   const params = useParams();
-  const history = useHistory();
-  console.log({ props, params, history });
+  const navigate = useNavigate();
+  // navigate("/aaaa" , {replace: true})
+  // navigate(-2)
+  console.log({ props, params });
 
   let {
     data: post,
     isloading,
     errMsg,
-  } = useFetch(`http://localhost:4000/posts/${props.match.params.id}`);
+  } = useFetch(`http://localhost:4000/posts/${params.id}`);
 
   const handleDelete = () => {
-    fetch(`http://localhost:4000/posts/${props.match.params.id}`, {
+    fetch(`http://localhost:4000/posts/${params.id}`, {
       method: "DELETE",
     }).then(() => {
-      props.history.push("/");
+      navigate("/");
     });
   };
   return (

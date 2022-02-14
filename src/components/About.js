@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const About = () => {
   return (
@@ -7,12 +7,7 @@ const About = () => {
       <h1>About Blog </h1>
       <Link to="/about/hello"> Hello </Link>
 
-      <Route path="/about/hello">
-        <div>
-          <br /> <br /> <hr /> <br />
-          <p>Hellooooooooo</p>
-        </div>
-      </Route>
+      <Outlet />
     </div>
   );
 };
