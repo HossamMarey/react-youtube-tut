@@ -1,11 +1,17 @@
 import useFetch from "../../useFetch";
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const PostDetails = (props) => {
-  console.log(props.match.params.id);
+  const params = useParams();
+  const history = useHistory();
+  console.log({ props, params, history });
 
-  let { data: post, isloading, errMsg } = useFetch(
-    `http://localhost:4000/posts/${props.match.params.id}`
-  );
+  let {
+    data: post,
+    isloading,
+    errMsg,
+  } = useFetch(`http://localhost:4000/posts/${props.match.params.id}`);
 
   const handleDelete = () => {
     fetch(`http://localhost:4000/posts/${props.match.params.id}`, {
